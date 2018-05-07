@@ -1,0 +1,19 @@
+
+.name-plate {
+	flex-grow: 1;
+	margin: 0 0.25rem;
+	line-height: 1;
+	display: flex;
+	flex-direction: column;	
+}
+
+.name-plate .pre, .name-plate .post {
+	font-size: 66%;
+}
+
+.name-plate .pre { text-align: left }
+.name-plate .post { text-align: right }
+.name-plate .main { 
+	text-align: center;
+	padding: 0 0.25em;
+}

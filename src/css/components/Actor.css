@@ -1,0 +1,14 @@
+.actor {
+  margin: 0.25rem 0;
+  height: 3rem;
+  display: flex;
+  align-items: center; }
+
+.actor-avatar {
+  text-align: center;
+  height: 3em;
+  line-height: 3em;
+  width: 3em;
+  border-radius: 1.5em;
+  margin-right: 0.25em;
+  background: #ccc; }

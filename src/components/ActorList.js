@@ -2,7 +2,7 @@
 	import React from 'react'
 	import Actor from './Actor'
 
-	import './ActorList.css'
+	import '../css/components/ActorList.css'
 
 	// --------------------------------------------------------
 	class ActorList extends React.Component {

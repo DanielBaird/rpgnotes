@@ -1,0 +1,21 @@
+.ability-grid {
+  font-size: 0.66rem;
+  display: grid;
+  grid-template-areas: "str int" "dex wis" "con cha"; }
+
+.ability {
+  text-align: center;
+  line-height: 1;
+  padding: 0.15em 0.1em;
+  margin: 0 0.1em; }
+  .ability * {
+    display: inline-block;
+    padding: 0 0.1em;
+    letter-spacing: -0.05em; }
+  .ability .name {
+    font-variant: small-caps; }
+  .ability .value {
+    font-weight: bold; }
+  .ability .bonus {
+    opacity: 0.5;
+    font-weight: bold; }

@@ -1,0 +1,17 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'
+	width='100' height='100' fill='#faa'>
+	<defs>
+		<clipPath id='left'>
+			<rect x='0' y='0' width='50' height='100' />
+		</clipPath>
+		<clipPath id='right'>
+			<rect x='50' y='0' width='50' height='100' />
+		</clipPath>
+	</defs>
+	<g clip-path='url(#left)'>
+		<ellipse cx='45' cy='50' rx='35' ry='55' transform='rotate(-34,50,50)'  />
+	</g>
+	<g clip-path='url(#right)'>
+		<ellipse cx='55' cy='50' rx='35' ry='55' transform='rotate(34,50,50)'  />
+	</g>
+</svg>

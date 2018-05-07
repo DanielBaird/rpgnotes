@@ -1,27 +1,52 @@
 
 import React from 'react'
 
-import './Actor.css'
+import NamePlate from './NamePlate'
+import NumberPlate from './NumberPlate'
+import AbilityGrid from './AbilityGrid'
+
+import '../css/components/Actor.css'
+
 
 // --------------------------------------------------------
 class Actor extends React.Component {
 	// - - - - - - - - - - - - - - - - - - - - - - - - -
 	actorInitials(maxLength = 3) {
+		if (this.props.info.initials) {
+			return this.props.info.initials
+		}
 		return this.props.info.name.split(/\s+/, maxLength).map((word)=>{
-			return word[0].toUpperCase()
+			const lcword = word.toLowerCase()
+			if (
+				   lcword === 'of'
+				|| lcword === 'and'
+				|| lcword === 'the'
+			) {
+				return lcword[0]
+			}
+			return lcword[0].toUpperCase()
 		})
 	}
 	// - - - - - - - - - - - - - - - - - - - - - - - - -
 	render() {
 		const p = this.props
+		const i = p.info
+		const {str, dex, con, int, wis, cha} = p.info
+		const abilities = {str, dex, con, int, wis, cha}
 		return (
 			<div className='actor'>
 				<div className='actor-avatar'>
 					{this.actorInitials()}
 				</div>
-				<div>
-					{p.info.name}
-				</div>
+				<NamePlate name={i.name} pre={i.titlePrefix} post={i.titleSuffix} />
+				<NumberPlate head="sword" type="attack" main='+5' foot='🔥2d6+2' />
+				<NumberPlate head="AC" type="shield" main={i.ac} />
+				<NumberPlate head="HP" type="heart" main={i.hp} foot='/123' />
+				<NumberPlate head="HP" type="heartblood" main={i.hp} />
+				{/*<NumberPlate head="AC" type="square" main={i.ac} />*/}
+				{/*<NumberPlate head="AC" type="circle" main={i.ac} />*/}
+
+				<AbilityGrid abilities={abilities} />
 			</div>
 		)
 	}
